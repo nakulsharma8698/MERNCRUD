@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 var crud = require('./crud.js');
 app.use('/admin', crud);
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/my_db', { useNewUrlParser: true , useUnifiedTopology: true , useFindAndModify: false});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://nakul_db:Main2016@cluster0.lqqs7.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true , useUnifiedTopology: true , useFindAndModify: false});
 const connection = mongoose.connection;
 var bookingSchema = mongoose.Schema({
     name: String,
