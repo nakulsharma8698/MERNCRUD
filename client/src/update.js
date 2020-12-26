@@ -76,7 +76,7 @@ class Update extends Component {
                     <option value="Super Premium">Super Premium</option>
                     <option value="Celebrity">Celebrity</option>
                 </select><br/><br/>
-                <button type="submit" className="submitbtn" onClick={this.submitButton}> Submit</button> &nbsp; <Link to="/empdetails"><button className="submitbtn">Edit Employees</button></Link><br/><br/>
+                <button type="submit" className="submitbtn" onClick={this.submitButton}> Submit</button><br/><br/>
             </form>
             </div>
         );
