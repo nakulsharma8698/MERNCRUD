@@ -10,12 +10,11 @@ var cookieParser = require('cookie-parser');
 const saltRounds = 10;
 const bcrypt = require('bcrypt');
 app.use(cors());
-//mongodb+srv://nakul_db:*****@cluster0.lqqs7.mongodb.net/test?authSource=admin&replicaSet=atlas-ttyj65-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/my_db', { useNewUrlParser: true , useUnifiedTopology: true , useFindAndModify: false});
+mongoose.connect(process.env.MONGODB_URI ||'mongodb+srv://nakul_db:Main2016@cluster0.lqqs7.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true , useUnifiedTopology: true , useFindAndModify: false});
 const connection = mongoose.connection;
 var userrSchema = mongoose.Schema({
     username: String,
