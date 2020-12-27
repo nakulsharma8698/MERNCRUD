@@ -10,7 +10,6 @@ var cookieParser = require('cookie-parser');
 const saltRounds = 10;
 const bcrypt = require('bcrypt');
 app.use(cors());
-//mongodb+srv://nakul_db:*****@cluster0.lqqs7.mongodb.net/test?authSource=admin&replicaSet=atlas-ttyj65-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
