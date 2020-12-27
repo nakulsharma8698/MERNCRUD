@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const app = express()
 const cors = require('cors');
 var cookieParser = require('cookie-parser');
-const port = process.env.port || 4000;
+const PORT = process.env.PORT || 4000;
 app.use(cors());
 
 app.use(bodyParser.urlencoded({extended : true}));
@@ -110,4 +110,4 @@ connection.once('open', function() {
     app.use(express.static('client/build'));
   }
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
