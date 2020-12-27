@@ -13,10 +13,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 var crud = require('./crud.js');
 app.use('/admin', crud);
-<<<<<<< HEAD
 //app.use(express.static(path.join(__dirname, "client", "build")))
-=======
->>>>>>> 1608a84e71a252550ef4ad69516ef9d8d80c4da2
 mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://nakul_db:Main2016@cluster0.lqqs7.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true , useUnifiedTopology: true , useFindAndModify: false});
 const connection = mongoose.connection;
 var bookingSchema = mongoose.Schema({
@@ -113,17 +110,14 @@ connection.once('open', function() {
   {
     app.use(express.static('client/build'));
   }
-<<<<<<< HEAD
   /*app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });*/
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
 //
-=======
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
->>>>>>> 1608a84e71a252550ef4ad69516ef9d8d80c4da2
