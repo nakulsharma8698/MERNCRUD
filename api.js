@@ -1,11 +1,11 @@
 const express = require('express')
-var mysql = require('mysql');
+//var path = require('path');
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const app = express()
 const cors = require('cors');
 var cookieParser = require('cookie-parser');
-const port = process.env.port || 4000;
+const PORT = process.env.PORT || 4000;
 app.use(cors());
 
 app.use(bodyParser.urlencoded({extended : true}));
@@ -13,7 +13,8 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 var crud = require('./crud.js');
 app.use('/admin', crud);
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/my_db', { useNewUrlParser: true , useUnifiedTopology: true , useFindAndModify: false});
+//app.use(express.static(path.join(__dirname, "client", "build")))
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://nakul_db:Main2016@cluster0.lqqs7.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true , useUnifiedTopology: true , useFindAndModify: false});
 const connection = mongoose.connection;
 var bookingSchema = mongoose.Schema({
     name: String,
@@ -109,5 +110,9 @@ connection.once('open', function() {
   {
     app.use(express.static('client/build'));
   }
+  /*app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});*/
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
+//

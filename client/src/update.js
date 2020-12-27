@@ -32,7 +32,7 @@ class Update extends Component {
         event.preventDefault();
         console.log(this.state)
         alert('Updated SuccessFully');
-        this.props.history.push('/bookingdetails');
+        //this.props.history.push('/bookingdetails');
         const data = { phone:this.state.phone, seats:this.state.seats, category:this.state.category}
         axios.post('http://localhost:4000/update/'+this.props.match.params.id, data)
         .then(res => { 
@@ -76,7 +76,7 @@ class Update extends Component {
                     <option value="Super Premium">Super Premium</option>
                     <option value="Celebrity">Celebrity</option>
                 </select><br/><br/>
-                <button type="submit" className="submitbtn" onClick={this.submitButton}> Submit</button> &nbsp; <Link to="/empdetails"><button className="submitbtn">Edit Employees</button></Link><br/><br/>
+                <button type="submit" className="submitbtn" onClick={this.submitButton}> Submit</button><br/><br/>
             </form>
             </div>
         );
