@@ -14,7 +14,7 @@ app.use(cookieParser());
 var crud = require('./crud.js');
 app.use('/admin', crud);
 //app.use(express.static(path.join(__dirname, "client", "build")))
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://nakul_db:Main2016@cluster0.lqqs7.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true , useUnifiedTopology: true , useFindAndModify: false});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/my_db?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false', { useNewUrlParser: true , useUnifiedTopology: true , useFindAndModify: false});
 const connection = mongoose.connection;
 var bookingSchema = mongoose.Schema({
     name: String,
